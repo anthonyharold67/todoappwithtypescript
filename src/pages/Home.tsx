@@ -2,12 +2,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import InputForm from '../components/InputForm'
 import TodoList from '../components/TodoList';
+import useAxios from '../hooks/useAxios';
 
 const url = "https://63878fa2d9b24b1be3f43d73.mockapi.io/todos"
 
 
 
 const Home = () => {
+  //custom hooktan da çekip burada çağırıp ve componentlere props olarak geçebiliriz. Bunları ilgili componentlerde de çağırabilirdik. Ama propslar typescriptte nasıl kullanılıyor onu görmek adına bu şekilde kullanabiliriz
+
+  // const { todos, getTodos, addTodo, deleteTodo, toggleTodo } = useAxios()
+
   const [todos,setTodos] = useState<TodoType[]>([])
 
   const getTodos = async () => {
